@@ -28,8 +28,21 @@ p {
   line-height: 1.5;
 }
 
+/* Containers */
+
 .container-fluid {
   padding: 7% 15%;
+}
+
+/* Sections */
+
+.coloured-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
 }
 
 /* Navigation Bar */
@@ -65,8 +78,6 @@ p {
 /* Title Section */
 
 #title {
-  background-color: #ff4c68;
-  color: #fff;
   text-align: left;
 }
 
@@ -86,7 +97,6 @@ p {
 /* Features */
 
 #features {
-  background-color: #fff;
   position: relative;
 }
 
@@ -158,14 +168,12 @@ p {
 /* Call to Action Section */
 
 #cta {
-  background-color: #ff4c68;
   padding: 3% 15%;
 }
 
 /* Footer section */
 
 #footer {
-  background-color: #fff;
   padding: 5% 15%;
 }
 
