@@ -1,3 +1,3 @@
-#TinDog
+# DOM
 
-Dating Site for Dogs
+DOM(Document Object Model) practice using JavaScript.
