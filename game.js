@@ -53,6 +53,13 @@ function checkAnswer() {
   return true;
 }
 
+function gameStart() {
+  if (level == 0) {
+    $("#level-title").text("Level "+level);
+    nextSequence();
+  }
+}
+
 function gameOver() {
   gamePattern.length = 0;
   $("body").addClass("game-over");
@@ -66,10 +73,11 @@ function gameOver() {
 }
 
 $(document).keypress(function(event) {
-  if (level == 0) {
-    $("#level-title").text("Level "+level);
-    nextSequence();
-  }
+  gameStart();
+});
+
+$("#level-title").click(function() {
+  gameStart();
 });
 
 var debounce = false;
