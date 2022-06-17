@@ -4,28 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Simon Game</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
-  <title>DOM</title>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
 </head>
 <body>
+  <h1 id="level-title">Press A Key to Start</h1>
+  <div class="container">
+    <div lass="row">
 
-  <h2 class="button"><a href="DiceGame">Dice Game</a></h2>
-  <h2 class="button"><a href="DrumKit">Drum Kit</a></h2>
+      <div type="button" id="green" class="btn green">
 
-  <h1 id="title">Hello</h1>
+      </div>
 
-  <input type="checkbox" name="" value="">
+      <div type="button" id="red" class="btn red">
 
-  <button class="button" type="button">Click Me</button>
+      </div>
+    </div>
 
-  <ul id="list">
-    <li class="item"><a href="https://www.google.com">Google</a></li>
-    <li class="item">Second</li>
-    <li class="item">Third</li>
-  </ul>
+    <div class="row">
 
+      <div type="button" id="yellow" class="btn yellow">
 
+      </div>
+      <div type="button" id="blue" class="btn blue">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="game.js" charset="utf-8"></script>
 
 </body>
-<script src="index.js" charset="utf-8"></script>
 </html>
