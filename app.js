@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 // API key for openweathermap API
-const apiKey = "6bb50b383d5206e623f100ec0f52cc4f";
+const apiKey = "Insert Your API Key";
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/index.html");
