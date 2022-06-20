@@ -5,7 +5,7 @@ const http = require("http");
 const express = require("express");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
-const mailchimpApiKey = "e58f579fa197a634da36239c12cc4fd3-us9";
+const mailchimpApiKey = "Your API key";
 const mailchimpListId = "3734b98cae";
 const mailchimpServer = "us9";
 
