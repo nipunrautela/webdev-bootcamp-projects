@@ -1,2 +1,3 @@
-# Web Development Projects
-Projects are separated into branches, choose a branch to view the respective project.
+# Newsletter App
+
+Creating  a newsletter webapp using Mailchimp API
