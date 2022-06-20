@@ -1,2 +1,3 @@
-# Web Development Projects
-Projects are separated into branches, choose a branch to view the respective project.
+# ToDo List
+
+A simple webapp to replicate a ToDo List

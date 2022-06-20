@@ -1,0 +1,24 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "A simple webapp to replicate a todo list",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nipunrautela/webdev-bootcamp-projects.git"
+  },
+  "author": "Nipun Rautela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nipunrautela/webdev-bootcamp-projects/issues"
+  },
+  "homepage": "https://github.com/nipunrautela/webdev-bootcamp-projects#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
