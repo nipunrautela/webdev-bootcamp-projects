@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-var _ = require("lodash");
+const _ = require("lodash");
 
 let posts = [];
 
@@ -21,7 +21,8 @@ app.use(express.static("public"));
 app.get("/", function(req, res) {
   res.render("home", {
     startingContent: homeStartingContent,
-    posts: posts
+    posts: posts,
+    kebabCase: _.kebabCase
   });
 });
 
@@ -46,6 +47,7 @@ app.get("/compose", function(req, res) {
 app.post("/compose", function(req, res) {
   var post = {
     title: req.body.postTitle,
+    author: req.body.authorName,
     content: req.body.postBody
   };
 
@@ -56,20 +58,25 @@ app.post("/compose", function(req, res) {
 
 // separate pages for posts using routes
 app.get("/posts/:postName", function(req, res) {
-  let searchedTitle = _.lowerCase(req.params.postName);
+  let searchedTitle = _.kebabCase(req.params.postName);
+  let found = false;
   posts.forEach(function(post) {
     // console.log(postName);
     // console.log(post);
-    let findTitle = _.lowerCase(post.title);
+    let findTitle = _.kebabCase(post.title);
     if (findTitle === searchedTitle) {
       res.render("post", {
         post: post
       });
+      found = true;
     }
   });
-  res.render("post", {
-    post: {title: "Post Not Found", content: "The post you're looking for, does not exist."}
-  });
+
+  if (!found) {
+    res.render("post", {
+      post: {title: "Post Not Found", content: "The post you're looking for, does not exist."}
+    });
+  }
 
 });
 

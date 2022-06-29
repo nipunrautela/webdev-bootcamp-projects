@@ -3,12 +3,16 @@
 <h1>Compose</h1>
 <form class="" action="/compose" method="post">
   <div class="mb-3">
-    <label class="form-label" for="">Title</label>
-    <input class="form-control" type="text" name="postTitle">
+    <label class="form-label" for="">Author</label>
+    <input class="form-control" type="text" name="authorName" required>
   </div>
+    <div>
+      <label class="form-label" for="">Title</label>
+      <input class="form-control" type="text" name="postTitle" required>
+    </div>
   <div class="mb-3">
     <label class="form-label" for="">Post</label>
-    <textarea class="form-control" name="postBody" rows="8" cols="80"></textarea>
+    <textarea class="form-control" name="postBody" rows="8" cols="80" required></textarea>
   </div>
   <button class="btn btn-primary" type="submit" name="button">Publish</button>
 </form>
