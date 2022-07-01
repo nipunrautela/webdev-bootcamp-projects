@@ -1,0 +1,14 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "description": "learning about mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nipun Rautela",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.4.1"
+  }
+}
