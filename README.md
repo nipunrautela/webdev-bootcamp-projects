@@ -1,2 +1,2 @@
-# Web Development Projects
-Projects are separated into branches, choose a branch to view the respective project.
+# Pricing Panel
+A basic Pricing panel project to understand flexbox and css component.
