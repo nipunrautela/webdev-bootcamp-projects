@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table Tennis Scorekeeper</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="https://thebridge.in/wp-content/uploads/2020/09/table-tennis.jpg" alt="table tennis image">
+              </figure>
+            </div>
+            <header class="card-header">
+              <p class="card-header-title">
+                Table Tennis Scorekeeper
+              </p>
+              <button class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <h1 class="title is-1"><span id="p1Score">0</span> to <span id="p2Score">0</span></h1>
+                <p class="subtitle">
+                  Use the button below to control scores.
+                </p>
+                <div class="column">
+                  <label for="playTo" class="label is-large is-inline column is-half">Playing To</label>
+                  <input class="input is-rounded column is-one-quarter is-inline" type="number" id="playTo" value=5 min=1>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <button id="p1Button" class="is-primary button card-footer-item is-large">+1 Player One</button>
+              <button id="p2Button" class="is-info button card-footer-item is-large">+1 Player Two</button>
+              <button id="reset" class="is-danger button card-footer-item is-large">Reset</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
