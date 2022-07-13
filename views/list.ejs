@@ -5,16 +5,19 @@
 
 
   <div class="box">
-    <% for(var i=0; i<itemsList.length; i++) { %>
-      <label for="item-<%= i %>" class="item-label">
-        <div class="item">
-          <input type="checkbox" id="item-<%= i %>">
-          <p> <%= itemsList[i] %></p>
-        </div>
-      </label>
-    <% } %>
+    <% itemsList.forEach(function(item) { %>
+      <form action="/delete" method="post">
+        <label for="<%= item._id.toHexString() %>" class="item-label">
+          <div class="item">
+            <input type="checkbox" name="checkbox" value="<%= item._id.toHexString() %>" onchange="this.form.submit()" id="<%= item._id.toHexString()  %>">
+            <input type="hidden" name="list" value="<%= listTitle %>"></input>
+            <p> <%= item.name %></p>
+          </div>
+        </label>
+      </form>
+    <% }); %>
 
-    <form action="/" method="post">
+    <form class="item" action="/" method="post">
       <input type="text" name="newItemName" placeholder="New Item">
 
       <button type="submit" name="list" value="<%= listTitle %>">+</button>
