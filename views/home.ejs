@@ -13,7 +13,7 @@
     </p>
     <p>
       <%= post.content.substr(0, 100) %>...
-      <a href="/posts/<%= kebabCase(post.title) %>"> Read More</a>
+      <a href="/posts/<%= post._id %>"> Read More</a>
       <%
         // console.log(kebabCase(post.title));
         // console.log(post.title);
