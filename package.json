@@ -56,6 +56,7 @@
     "jake": "^10.8.5",
     "kareem": "^2.4.1",
     "lodash": "^4.17.21",
+    "md5": "^2.3.0",
     "media-typer": "^0.3.0",
     "memory-pager": "^1.5.0",
     "merge-descriptors": "^1.0.1",
