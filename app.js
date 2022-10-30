@@ -41,9 +41,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/userDB", { useNewUrlParser: true });
 // mongoose.set("useCreateIndex", true);
 
 const userSchema = mongoose.Schema({
-  googleId: String,
   email: String,
   password: String,
+  googleId: String,
+  secret: String,
 });
 
 // Uncomment to activate db encryption using mongoose
@@ -85,7 +86,7 @@ passport.use(
     function (accessToken, refreshToken, profile, cb) {
       //   console.log(profile);
       User.findOrCreate({ googleId: profile.id }, function (err, user) {
-        console.log(user);
+        // console.log(user);
         return cb(err, user);
       });
     }
@@ -118,11 +119,40 @@ app.get("/register", function (req, res) {
 });
 
 app.get("/secrets", function (req, res) {
+  User.find({ secret: { $ne: null } }, function (err, foundUsers) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUsers) {
+        res.render("secrets", { usersWithSecrets: foundUsers });
+      }
+    }
+  });
+});
+
+app.get("/submit", function (req, res) {
   if (req.isAuthenticated()) {
-    res.render("secrets");
+    res.render("submit");
   } else {
     res.redirect("/login");
   }
+});
+
+app.post("/submit", function (req, res) {
+  const submittedSecret = req.body.secret;
+
+  User.findById(req.user.id, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.secret = submittedSecret;
+        foundUser.save(function () {
+          res.redirect("/secrets");
+        });
+      }
+    }
+  });
 });
 
 app.get("/logout", function (req, res) {
@@ -133,7 +163,7 @@ app.get("/logout", function (req, res) {
 });
 
 app.post("/register", function (req, res) {
-  // Using bcrypt to hash password
+  //   Using bcrypt to hash password
   //   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
   //     const newUser = new User({
   //       email: req.body.username,
