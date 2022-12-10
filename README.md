@@ -1,2 +1,2 @@
-# Web Development Projects
-Projects are separated into branches, choose a branch to view the respective project.
+# Keeper App
+Learning to create a react app by making a note keeper app.
